@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Jul-2022 às 17:27
--- Versão do servidor: 10.4.17-MariaDB
--- versão do PHP: 7.3.27
+-- Generation Time: Jul 14, 2022 at 11:59 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `sitesigma`
+-- Database: `sitesigma`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `categorias`
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -34,7 +34,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
@@ -53,7 +53,7 @@ INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `produtos`
+-- Table structure for table `produtos`
 --
 
 CREATE TABLE `produtos` (
@@ -67,7 +67,7 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Extraindo dados da tabela `produtos`
+-- Dumping data for table `produtos`
 --
 
 INSERT INTO `produtos` (`ProdutosID`, `Nome`, `Descricao`, `imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES
@@ -81,39 +81,58 @@ INSERT INTO `produtos` (`ProdutosID`, `Nome`, `Descricao`, `imagem`, `Preco`, `C
 (8, 'Caramelho', 'Descrição Doguinho Caramelo', 'caramelo-legal.jpg', 3000, 1, 1),
 (9, 'Onça', 'Descrição Onça Pintada', 'onca-legal.jpg', 3500, 1, 1),
 (10, 'Tucano', 'Descrição Tucano', 'tucano-legal.jpg', 3500, 1, 1),
-(11, 'Borboleta', 'Descrição Borboleta', 'borboleta-legal.jpg', 4000, 2, 1);
+(11, 'Borboleta', 'Descrição Borboleta', 'borboleta-legal.jpg', 4000, 2, 1),
+(12, 'Canário', 'Descrição Canarinho', 'canario-legal.jpg', 3000, 2, 1),
+(13, 'Joaninha', 'Descrição Joaninha', 'joaninha-legal.jpg', 2500, 2, 1),
+(14, 'Pica Pau', 'Descrição Pica Pau', 'picapau-legal.jpg', 2000, 2, 1),
+(15, 'Libélula', 'Descrição Libélula', 'libelula-legal.jpg', 4000, 2, 1),
+(16, 'Águia', 'Descrição Águia', 'aguia-legal.jpg', 2500, 2, 1),
+(17, 'Flamingo', 'Descrição Flamingo', 'flamingo-legal.jpg', 3000, 2, 1),
+(18, 'Rouxinol', 'Descrição Rouxinol', 'rouxinol-legal.jpg', 3000, 2, 1),
+(19, 'Tom e Jerry', 'Descrição Tom e Jerry', 'Tom-Jerry-legal.jpg', 3000, 3, 1),
+(20, 'Scooby Doo', 'Descrição Scooby Doo', 'scooby-legal.jpg', 2500, 3, 1),
+(21, 'Coragem', 'Descrição Coragem, o Cão Covarde', 'coragem-legal.jpg', 4000, 3, 1),
+(22, 'Jake', 'Descrição Jake, o Cão', 'jake-legal.jpg', 2500, 3, 1),
+(23, 'Pica Pau', 'Descrição Pica Pau', 'picapau-desenho-legal.jpg', 3000, 3, 1),
+(24, 'Peixonauta', 'Descrição Peixonauta', 'peixonauta-legal.jpg', 4000, 3, 1),
+(25, 'Bob Esponja', 'Descrição Bob Esponja', 'bob-legal.jpg', 3000, 3, 1),
+(26, 'Backyardigans', 'Descrição Backyardigans', 'backyardigans-legal.jpg', 4000, 3, 1),
+(27, 'Barney', 'Descrição Barney', 'barney-legal.jpg', 3000, 3, 1),
+(28, 'Gumball', 'Descrição Gumball Waterson', 'gumball-legal.jpg', 2500, 3, 1),
+(29, 'Perry', 'Descrição Perry, o Ornitorrinco', 'perry-legal.jpg', 3000, 3, 1),
+(30, 'Mickey', 'Descrição Mickey Mouse', 'mickey-legal.jpg', 3000, 3, 1);
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `categorias`
+-- Indexes for table `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`CategoriaID`);
 
 --
--- Índices para tabela `produtos`
+-- Indexes for table `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`ProdutosID`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `categorias`
+-- AUTO_INCREMENT for table `categorias`
 --
 ALTER TABLE `categorias`
   MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT de tabela `produtos`
+-- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
