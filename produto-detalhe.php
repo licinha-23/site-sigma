@@ -1,6 +1,6 @@
 <?php
 // include do footer
-include_once './includes/_dados.php';
+include_once './includes/_banco.php';
 include_once './includes/_head.php';
 include_once './includes/_header.php';
 
@@ -19,11 +19,16 @@ echo $id;
         <h5><?php echo $produtos[$id]['preço']; ?></h5>
         </div>
     </div>
+     
     <div class="row">
-        <div class="col">Voltar</div>
-        <div class="col">Comprar</div>
+        <div class="col">
+        <a href="index.php"><button type="button" class="btn btn-primary">Voltar</button></a>
+        </div>
+        <div class="col">
+        <a href="contato.php"><button type="button" class="btn btn-primary">Comprar</button></a>
+        </div>
     </div>
-</div>
+    
 
 <?php
 // include do footer

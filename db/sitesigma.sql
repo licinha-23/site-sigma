@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07-Jul-2022 às 16:41
+-- Tempo de geração: 14-Jul-2022 às 17:27
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -38,16 +38,17 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
-(1, 'Carros', 1),
-(2, 'Gatos', 1),
-(3, 'Flores', 1),
+(1, 'Animais Brasileiros', 1),
+(2, 'Animais que Voam', 1),
+(3, 'Animais de Desenhos Animados', 1),
 (4, 'Dogs', 1),
 (5, 'Animais', 1),
 (6, 'Roupas', 1),
 (7, 'Acessorios', 1),
 (8, 'Paises', 1),
 (9, 'Moveis', 1),
-(10, 'Famosos', 1);
+(10, 'Famosos', 1),
+(11, 'Filmes', 1);
 
 -- --------------------------------------------------------
 
@@ -56,7 +57,7 @@ INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
 --
 
 CREATE TABLE `produtos` (
-  `ProdutoID` int(11) NOT NULL,
+  `ProdutosID` int(11) NOT NULL,
   `Nome` varchar(150) NOT NULL,
   `Descricao` longtext NOT NULL,
   `imagem` varchar(200) NOT NULL,
@@ -64,6 +65,23 @@ CREATE TABLE `produtos` (
   `CategoriaID` int(11) NOT NULL,
   `Ativo` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`ProdutosID`, `Nome`, `Descricao`, `imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES
+(1, 'Capivara', 'Descrição Capivara Legal', 'capivara-legal.jpg', 1200, 1, 1),
+(2, 'Anta', 'Descrição Anta', 'anta-legal.jpg', 3000, 1, 1),
+(3, 'Tamanduá', 'Descrição Tamanduá Bandeira', 'tamandua-legal.jpg', 2500, 1, 1),
+(4, 'Ararinha', 'Descrição Ararinha Azul', 'ararinha-legal.jpg', 3000, 1, 1),
+(5, 'Mico', 'Descrição Mico Leão Dourado', 'mico-legal.jpg', 2000, 1, 1),
+(6, 'Boto', 'Descrição Boto Cor de Rosa', 'boto-legal.jpg', 2000, 1, 1),
+(7, 'Tatu', 'Descrição Tatu Bolinha', 'tatu-legal.jpg', 3000, 1, 1),
+(8, 'Caramelho', 'Descrição Doguinho Caramelo', 'caramelo-legal.jpg', 3000, 1, 1),
+(9, 'Onça', 'Descrição Onça Pintada', 'onca-legal.jpg', 3500, 1, 1),
+(10, 'Tucano', 'Descrição Tucano', 'tucano-legal.jpg', 3500, 1, 1),
+(11, 'Borboleta', 'Descrição Borboleta', 'borboleta-legal.jpg', 4000, 2, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -79,7 +97,7 @@ ALTER TABLE `categorias`
 -- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`ProdutoID`);
+  ADD PRIMARY KEY (`ProdutosID`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -89,13 +107,13 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutoID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
