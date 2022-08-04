@@ -10,11 +10,11 @@ include_once './_menu.php';
 ?>
 
 <main>
-    <h1>Administração das Categorias</h1>
+    <h1 style="text-align: center;">Administração das Categorias</h1>
 
-    <a href="categoria-salvar">Inserir</a>
+    <a href="categoria-salvar.php">Inserir</a>
     <hr>
-    <table border="1">
+    <table style="text-align: center; background-color: #F5F5F5;" border="1">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -26,10 +26,10 @@ if ($resultado) {
     while ($dado = mysqli_fetch_array($resultado)) {
 ?>
 
-<tr>
+<tr style="text-align: center;">
     <td><?php echo $dado['CategoriaID'];?></td>
-    <td><a href="categoria-salvar.php?acao=salvar&id=<?php $dado['CategoriaID'];?>"><?php echo $dado['Nome']?></a></td>
-    <td><a href="categoria-processa.php?acao=excluir&id=<?php $dado['CategoriaID'];?>"></a>Excluir</td>
+    <td><a style="color: #000000; " href="categoria-salvar.php?acao=salvar&id=<?php $dado['CategoriaID'];?>"><?php echo $dado['Nome']?></a></td>
+    <td><a href="categoria-processa.php?acao=excluir&id=<?php $dado['CategoriaID'];?>">Excluir</a></td>
 </tr>
 
 <?php
