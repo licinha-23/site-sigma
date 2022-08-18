@@ -3,7 +3,7 @@ include_once '../includes/_banco.php';
 include_once './_header.php';
 include_once './_valida.php';
 
-$sql = "SELECT * FROM categorias";
+$sql = "SELECT * FROM categorias WHERE Ativo = 1";
 $resultado = mysqli_query($conn, $sql);
 $total = mysqli_num_rows($resultado);
 
@@ -29,8 +29,8 @@ if ($resultado) {
 
 <tr style="text-align: center;">
     <td><?php echo $dado['CategoriaID'];?></td>
-    <td><a style="color: #000000; " href="categoria-salvar.php?acao=salvar&id=<?php $dado['CategoriaID'];?>"><?php echo $dado['Nome']?></a></td>
-    <td><a href="categoria-processa.php?acao=excluir&id=<?php $dado['CategoriaID'];?>">Excluir</a></td>
+    <td><a style="color: #000000; " href="categoria-salvar.php?acao=salvar&id=<?php echo $dado['CategoriaID'];?>"><?php echo $dado['Nome']?></a></td>
+    <td><a href="categoria-processa.php?acao=excluir&id=<?php echo $dado['CategoriaID'];?>">Excluir</a></td>
 </tr>
 
 <?php
