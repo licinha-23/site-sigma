@@ -12,28 +12,28 @@ switch ($acao) {
         
         mysqli_query($conn, $sql);
 
-        header('location: ./produtos-lista.php');
+        header('location: ./produto-lista.php');
         break;
     
     case 'salvar';
-        $nome = $_POST['nome'];
-        $descricao = $_POST['descricao'];
+        $nome = $_POST['Nome'];
+        $descricao = $_POST['Descricao'];
         // print($nome);
         // print($descricao);
 
        if (!isset($nome) || !isset($descricao)) {
-        header('location: ./produtos-lista.php');
+        header('location: ./produto-lista.php');
        }
 
        if (!isset($id) || empty($id)) {
-        $sql = "INSERT INTO produtos (Nome, Ativo) VALUES ('$nome', 1)";
+        $sql = "INSERT INTO categorias (Nome, Ativo) VALUES ('$nome', 1)";
        } else {
         $sql = "UPDATE produtos SET nome = '$nome' WHERE ProdutosID = $id";        
        }
 
        mysqli_query($conn, $sql);
        
-       header ('location: ./produtos-lista.php');
+       header ('location: ./produto-lista.php');
 
        break;
 

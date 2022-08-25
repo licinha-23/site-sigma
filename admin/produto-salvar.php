@@ -16,8 +16,8 @@ include_once './_menu.php';
 ?>
 
 <main>
-    <h2 style="text-align: center;">Adminstração das Categorias</h2>
-    <a href="produto-lista.php">Listagem</a>
+    <h2 style="text-align: center;">Adminstração dos Produtos</h2>
+    <a href="categoria-lista.php">Listagem</a>
     <hr>
     <form style="text-align: center;" action="produto-processa.php" method="post">
         <input type="text" value="salvar" name="acao">

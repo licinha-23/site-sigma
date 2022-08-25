@@ -17,9 +17,9 @@ case 'login';
      $email = $_POST['email'];
      $senha = $_POST ['senha'];
 
-     $sql = "SELECT * FROM usuarios WHERE Email = '" .$email. "' AND Senha = '".$senha."'";
+     $sql = "SELECT * FROM usuarios WHERE Email = '$email' AND Senha = '$senha'";
      $resultado = mysqli_query($conn,$sql);
-    $dados = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
+     $dados = mysqli_fetch_array($resultado,MYSQLI_ASSOC);
 
     if (!empty($dados)) {
 
