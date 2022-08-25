@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2022 at 11:59 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 7.4.27
+-- Tempo de geração: 25-Ago-2022 às 17:18
+-- Versão do servidor: 10.4.17-MariaDB
+-- versão do PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `sitesigma`
+-- Banco de dados: `sitesigma`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categorias`
+-- Estrutura da tabela `categorias`
 --
 
 CREATE TABLE `categorias` (
@@ -34,7 +34,7 @@ CREATE TABLE `categorias` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `categorias`
+-- Extraindo dados da tabela `categorias`
 --
 
 INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
@@ -47,13 +47,34 @@ INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
 (7, 'Acessorios', 1),
 (8, 'Paises', 1),
 (9, 'Moveis', 1),
-(10, 'Famosos', 1),
-(11, 'Filmes', 1);
+(10, 'Famosos', 0),
+(11, 'Filmes', 0),
+(12, 'Bichinhos fofos', 0),
+(13, '', 0),
+(14, 'Animal', 1),
+(15, 'Mickey', 1),
+(16, '', 1),
+(17, '', 1),
+(18, '', 1),
+(19, '', 1),
+(20, 'Mickey', 1),
+(21, '', 1),
+(22, 'Elefante', 1),
+(23, 'Elefante', 1),
+(24, 'Elefante', 1),
+(25, 'Caramelo', 1),
+(26, 'Elefante', 1),
+(27, 'Elefante', 1),
+(28, '', 1),
+(29, 'Mickey', 1),
+(30, 'Mickey', 1),
+(31, 'Mickey', 1),
+(32, '', 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produtos`
+-- Estrutura da tabela `produtos`
 --
 
 CREATE TABLE `produtos` (
@@ -67,7 +88,7 @@ CREATE TABLE `produtos` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `produtos`
+-- Extraindo dados da tabela `produtos`
 --
 
 INSERT INTO `produtos` (`ProdutosID`, `Nome`, `Descricao`, `imagem`, `Preco`, `CategoriaID`, `Ativo`) VALUES
@@ -99,40 +120,74 @@ INSERT INTO `produtos` (`ProdutosID`, `Nome`, `Descricao`, `imagem`, `Preco`, `C
 (26, 'Backyardigans', 'Descrição Backyardigans', 'backyardigans-legal.jpg', 4000, 3, 1),
 (27, 'Barney', 'Descrição Barney', 'barney-legal.jpg', 3000, 3, 1),
 (28, 'Gumball', 'Descrição Gumball Waterson', 'gumball-legal.jpg', 2500, 3, 1),
-(29, 'Perry', 'Descrição Perry, o Ornitorrinco', 'perry-legal.jpg', 3000, 3, 1),
-(30, 'Mickey', 'Descrição Mickey Mouse', 'mickey-legal.jpg', 3000, 3, 1);
+(29, 'Perry', 'Descrição Perry, o Ornitorrinco', 'perry-legal.jpg', 3000, 3, 0),
+(30, 'Mickey', 'Descrição Mickey Mouse', 'mickey-legal.jpg', 3000, 3, 0),
+(31, 'Elefante', '', '', 0, 0, 0),
+(32, 'Elefante', '', '', 0, 0, 0);
+
+-- --------------------------------------------------------
 
 --
--- Indexes for dumped tables
+-- Estrutura da tabela `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `usuarioID` int(10) UNSIGNED NOT NULL,
+  `Nome` varchar(45) NOT NULL DEFAULT '',
+  `Senha` varchar(45) NOT NULL DEFAULT '',
+  `Email` varchar(45) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`usuarioID`, `Nome`, `Senha`, `Email`) VALUES
+(1, 'Alice', '1234', 'alice@gmail.com');
+
+--
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `categorias`
+-- Índices para tabela `categorias`
 --
 ALTER TABLE `categorias`
   ADD PRIMARY KEY (`CategoriaID`);
 
 --
--- Indexes for table `produtos`
+-- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`ProdutosID`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Índices para tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`usuarioID`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `categorias`
+-- AUTO_INCREMENT de tabela `categorias`
 --
 ALTER TABLE `categorias`
-  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `CategoriaID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
--- AUTO_INCREMENT for table `produtos`
+-- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+
+--
+-- AUTO_INCREMENT de tabela `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `usuarioID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
