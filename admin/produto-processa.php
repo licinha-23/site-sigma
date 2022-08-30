@@ -16,17 +16,16 @@ switch ($acao) {
         break;
     
     case 'salvar';
-        $nome = $_POST['Nome'];
-        $descricao = $_POST['Descricao'];
+        $nome = $_POST['nome'];
         // print($nome);
         // print($descricao);
 
-       if (!isset($nome) || !isset($descricao)) {
+       if (!isset($nome)) {
         header('location: ./produto-lista.php');
        }
 
        if (!isset($id) || empty($id)) {
-        $sql = "INSERT INTO categorias (Nome, Ativo) VALUES ('$nome', 1)";
+        $sql = "INSERT INTO produtos (Nome, Ativo) VALUES ('$nome', 1)";
        } else {
         $sql = "UPDATE produtos SET nome = '$nome' WHERE ProdutosID = $id";        
        }
