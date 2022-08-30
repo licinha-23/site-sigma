@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Ago-2022 às 17:18
+-- Tempo de geração: 30-Ago-2022 às 17:06
 -- Versão do servidor: 10.4.17-MariaDB
 -- versão do PHP: 7.3.27
 
@@ -46,30 +46,30 @@ INSERT INTO `categorias` (`CategoriaID`, `Nome`, `Ativo`) VALUES
 (6, 'Roupas', 1),
 (7, 'Acessorios', 1),
 (8, 'Paises', 1),
-(9, 'Moveis', 1),
+(9, 'Moveis', 0),
 (10, 'Famosos', 0),
 (11, 'Filmes', 0),
 (12, 'Bichinhos fofos', 0),
 (13, '', 0),
-(14, 'Animal', 1),
-(15, 'Mickey', 1),
-(16, '', 1),
-(17, '', 1),
-(18, '', 1),
-(19, '', 1),
-(20, 'Mickey', 1),
-(21, '', 1),
-(22, 'Elefante', 1),
-(23, 'Elefante', 1),
-(24, 'Elefante', 1),
-(25, 'Caramelo', 1),
-(26, 'Elefante', 1),
-(27, 'Elefante', 1),
-(28, '', 1),
-(29, 'Mickey', 1),
-(30, 'Mickey', 1),
-(31, 'Mickey', 1),
-(32, '', 1);
+(14, 'Animal', 0),
+(15, 'Mickey', 0),
+(16, '', 0),
+(17, '', 0),
+(18, '', 0),
+(19, '', 0),
+(20, 'Mickey', 0),
+(21, '', 0),
+(22, 'Elefante', 0),
+(23, 'Elefante', 0),
+(24, 'Elefante', 0),
+(25, 'Caramelo', 0),
+(26, 'Elefante', 0),
+(27, 'Elefante', 0),
+(28, '', 0),
+(29, 'Mickey', 0),
+(30, 'Mickey', 0),
+(31, 'Mickey', 0),
+(32, '', 0);
 
 -- --------------------------------------------------------
 
@@ -123,7 +123,12 @@ INSERT INTO `produtos` (`ProdutosID`, `Nome`, `Descricao`, `imagem`, `Preco`, `C
 (29, 'Perry', 'Descrição Perry, o Ornitorrinco', 'perry-legal.jpg', 3000, 3, 0),
 (30, 'Mickey', 'Descrição Mickey Mouse', 'mickey-legal.jpg', 3000, 3, 0),
 (31, 'Elefante', '', '', 0, 0, 0),
-(32, 'Elefante', '', '', 0, 0, 0);
+(32, 'Elefante', '', '', 0, 0, 0),
+(33, '', '', '', 0, 0, 0),
+(34, '', '', '', 0, 0, 0),
+(35, '', '', '', 0, 0, 0),
+(36, '', '', '', 0, 0, 0),
+(37, 'Mickey', '', '', 0, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -181,7 +186,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `ProdutosID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
